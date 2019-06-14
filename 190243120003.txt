@@ -1,0 +1,46 @@
+------------------------------------------------------------------------------------------
+Question 01. Change permission
+------------------------------------------------------------------------------------------
+while [ 1 ]
+do
+echo "doyou want to change the permission"
+echo "yes"
+echo "no"
+read choice
+case "$choice" in
+"yes") echo "Enter the file name "
+read f1
+if [ -f $f1 ]
+then
+echo "file $f1 exists "
+chmod 777 $f1
+else
+echo "File does not exists"
+fi
+;;
+"no") exit 0
+;;
+esac
+done
+------------------------------------------------------------------------------------------
+Question 02.Pattern
+-------------------------------------------------------------------------------------------
+echo "Enter the number "
+read num
+for ((i=1; i<=num; i++))
+do
+        for ((j=1; j<=i; j++))
+        do
+        echo -n "$num"
+        done
+        echo " "
+done
+for ((k=$num-1 ; k>=1; k--))
+do
+        for ((j=1; j<=k; j++))
+        do
+        echo -n "$num"
+        done
+        echo " "
+done
+----------------------------------------------------------------------------------------------
